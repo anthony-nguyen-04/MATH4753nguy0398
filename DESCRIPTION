@@ -1,0 +1,14 @@
+Package: MATH4753nguy0398
+Type: Package
+Title: MATH4753 nguy0398
+Version: 0.1.0
+Author: Anthony Nguyen 
+Maintainer: Anthony Nguyen <Anthony.Nguyen@ou.edu>
+Description: A package made for OU's MATH4753 class
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.2
+Imports:
+     dplyr,
+     ggplot2
