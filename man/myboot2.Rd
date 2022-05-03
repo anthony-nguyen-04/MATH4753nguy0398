@@ -2,7 +2,7 @@
 % Please edit documentation in R/myboot2.R
 \name{myboot2}
 \alias{myboot2}
-\title{Given a sample, calculate the point estimate and a (1-alpha)*100%
+\title{Given a sample, calculate the point estimate and a (1-alpha)*100 percent
 confidence interval for a function over a given amount of iterations.}
 \usage{
 myboot2(iter = 10000, x, fun = "mean", alpha = 0.05, cx = 1.5, ...)
@@ -14,15 +14,17 @@ myboot2(iter = 10000, x, fun = "mean", alpha = 0.05, cx = 1.5, ...)
 
 \item{fun}{the function to be applied onto our sample}
 
-\item{alpha}{used to determine the (1-alpha)*100% confidence interval}
+\item{alpha}{used to determine the (1-alpha)*100 percent confidence interval}
 
 \item{cx}{the relative scaling of the text/symbols for plots}
+
+\item{...}{more parameters for plotting histogram}
 }
 \value{
 a list, containing the data for the function, the confidence
 interval and the provided sample
 }
 \description{
-Given a sample, calculate the point estimate and a (1-alpha)*100%
+Given a sample, calculate the point estimate and a (1-alpha)*100 percent
 confidence interval for a function over a given amount of iterations.
 }

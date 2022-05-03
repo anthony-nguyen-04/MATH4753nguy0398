@@ -18,7 +18,7 @@ mycltMean=function(n,iter){
 
   # transforms Y into a (n x iter) matrix
   # each column represents one simulation
-  data=matrix(y,nr=n,nc=iter,byrow=TRUE)
+  data=matrix(y,nrow=n,ncol=iter,byrow=TRUE)
 
   # calculates the mean of each column on a column-by-column basis
   mn=apply(data,2,mean)

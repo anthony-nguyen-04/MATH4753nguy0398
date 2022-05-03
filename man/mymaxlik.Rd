@@ -13,8 +13,10 @@ mymaxlik(lfun, x, param, ...)
 
 \item{x}{Data, used to determine the maximum likelihood outcome}
 
-\item{theta}{Range of values, with the value with the highest likelihood
+\item{param}{Range of values, with the value with the highest likelihood
 being chosen}
+
+\item{...}{more parameters for plotting maximum likelihood}
 }
 \value{
 List, containing the index of the maximum likelihood outcome, the

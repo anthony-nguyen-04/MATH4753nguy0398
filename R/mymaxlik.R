@@ -4,8 +4,9 @@
 #'
 #' @param x Data, used to determine the maximum likelihood outcome
 #' @param lfun Function applied to the range of potential values
-#' @param theta Range of values, with the value with the highest likelihood
+#' @param param Range of values, with the value with the highest likelihood
 #' being chosen
+#' @param ... more parameters for plotting maximum likelihood
 #'
 #' @return List, containing the index of the maximum likelihood outcome, the
 #' maximum likelihood outcome, the maximum likelihood, and the slope of

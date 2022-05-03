@@ -15,7 +15,7 @@ mymaxlikg=function(lfun="logbin2",theta) {
   nth=length(theta)
 
   # converts theta into a (nth x 1) matrix
-  thmat=matrix(theta,nr=nth,nc=1,byrow=TRUE)
+  thmat=matrix(theta,nrow=nth,ncol=1,byrow=TRUE)
 
   # applies lfun to all values within theta
   z=apply(thmat,1,lfun)

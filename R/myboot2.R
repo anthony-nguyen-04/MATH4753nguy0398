@@ -1,11 +1,12 @@
-#' Given a sample, calculate the point estimate and a (1-alpha)*100%
+#' Given a sample, calculate the point estimate and a (1-alpha)*100 percent
 #' confidence interval for a function over a given amount of iterations.
 #'
 #' @param x the sample to be used
 #' @param iter the number of iterations to use for calculation
 #' @param fun the function to be applied onto our sample
-#' @param alpha used to determine the (1-alpha)*100% confidence interval
+#' @param alpha used to determine the (1-alpha)*100 percent confidence interval
 #' @param cx the relative scaling of the text/symbols for plots
+#' @param ... more parameters for plotting histogram
 #'
 #' @return a list, containing the data for the function, the confidence
 #' interval and the provided sample
@@ -21,7 +22,7 @@ myboot2<-function(iter=10000,x,fun="mean",alpha=0.05,cx=1.5,...){
   # then converts it to a (n x iter) matrix
   # each column represents one iteration of the simulation
   y=sample(x,n*iter,replace=TRUE)
-  rs.mat=matrix(y,nr=n,nc=iter,byrow=TRUE)
+  rs.mat=matrix(y,nrow=n,ncol=iter,byrow=TRUE)
 
   # Applies a function ("fun") to each column (thus, each simulation)
   # After applying the function, new array is (1 x iter)
@@ -38,7 +39,7 @@ myboot2<-function(iter=10000,x,fun="mean",alpha=0.05,cx=1.5,...){
 
   # Transposes "x" from 1-row matrix to 1-column matrix
   # Used for the "apply" function
-  mat=matrix(x,nr=length(x),nc=1,byrow=TRUE)
+  mat=matrix(x,nrow=length(x),ncol=1,byrow=TRUE)
 
   # pte is the point estimate
   # applies function ("fun") to x for pte
