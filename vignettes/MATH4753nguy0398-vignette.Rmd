@@ -1,0 +1,97 @@
+---
+title: "MATH4753nguy0398-vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{MATH4753nguy0398-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(MATH4753nguy0398)
+```
+
+# Introduction
+
+This package (MATH4753nguy0398) involves the "CODING" dataset, as well as the
+functions "_mysample()_", "_mycltmean()_", "_myncurve()_", and "_mymaxlik()_".
+
+## Data
+
+_"coding" Data Set_
+
+A data set containing instances of days elapsed and the number of program 
+modules with errors, from 25 randomly-selected program modules
+
+```{r}
+data("coding")
+
+knitr::kable(head(coding))
+
+```
+
+## First Function
+
+_"mysample" function_
+
+Generates a given amount of iterations for a given amount of random samples
+between 1 and 10 (inclusive) with replacement. Then, graphs the data
+to a barplot, before waiting to start the next iteration.
+
+```{r}
+
+MATH4753nguy0398::mysample(n = 10000, iter = 4, time = 0.5)
+
+```
+
+## Second Function
+
+_"mycltmean" function_
+
+Generates an n-sized random sample from the uniform distribution (between 0 
+and 5) for a given amount of iterations. Then, calculates the mean value for 
+each simulated iterations to form a histogram of this data.
+
+```{r}
+MATH4753nguy0398::mycltMean(n = 100, iter = 25)
+```
+
+## Third Function
+
+_"myncurve" function_
+
+Displays a normal curve (given mu and sigma), shades in the area between
+the curve and the x-axis from -Inf (approximated to 3 SD's away from the mean)
+to x=a (given a), and returns the area as a form of probability.
+
+```{r}
+MATH4753nguy0398::myncurve(mu = 0, sigma = 1, a = 2)
+```
+
+## Fourth Function
+
+_"mymaxlik" function_
+
+Given data, a probability-based function, and a range of potential values,
+this function determines the potential value that has the highest likelihood
+of generating this data.
+
+```{r}
+# size is 20 to account for 20 trials 
+logbin=function(x,param) log(dbinom(x,prob=param,size=20))
+
+# each value within results represents the outcome of 1 trial (out of 8)
+# in this case, the outcomes for this example is [1,2,3,4,5,6,7,8] successes
+# out of the 20 trials
+results = c(1,2,3,4,5,6,7,8)
+
+MATH4753nguy0398::mymaxlik(x=results,param=seq(0,1,length=1000),lfun=logbin,xlab=expression(pi),
+         main="Binomial",cex.main=2)
+```
